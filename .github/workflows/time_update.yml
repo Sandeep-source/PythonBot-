@@ -26,6 +26,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           python3 udemy.py  ${{secrets.SENDER_EMAIL}} ${{secrets.REC_EMAIL}} ${{secrets.PASSWORD}}
+          git config user.name ${{secrets.GITHUB_USERNAME}}
+          git config user.email ${{secrets.GITHUB_EMAIL}
           git add .
           git commit -m "Changed time"
           git push origin
